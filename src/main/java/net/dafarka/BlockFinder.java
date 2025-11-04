@@ -70,9 +70,9 @@ public class BlockFinder implements ClientModInitializer {
 				// Create a clickable text message
 				Text message = Text.literal("Target at " + posText)
 					.setStyle(Style.EMPTY
-						.withColor(Formatting.GOLD) // Set the text color
-						.withClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/tp @p " + pos.getX() + " " + (pos.getY() + 1) + " " + pos.getZ()))
-						.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, Text.literal("Click to teleport on top of the block.")))
+						.withColor(Formatting.GOLD)
+						.withClickEvent(new ClickEvent.SuggestCommand("/tp @p " + pos.getX() + " " + (pos.getY() + 1) + " " + pos.getZ()))
+						.withHoverEvent(new HoverEvent.ShowText(Text.literal("Click to teleport on top of the block.")))
 					);
 
 				// Send the message to the player
